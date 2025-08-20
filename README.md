@@ -57,9 +57,19 @@ Aqui está o que faz a mágica acontecer:
 - **HTML/CSS**: Para deixar a página bonita e fácil de usar.
 - **Expressões regulares (re)**: Um truque do Python para checar os tipos de caracteres na senha.
 
-## Por que criei isso?
+- **Segurança com senhas**  
+  Entendi a importância dos hashes para proteger dados sensíveis. Usei `pbkdf2:sha256` com o **Werkzeug** para armazenar senhas de forma segura.
 
-Queria fazer algo prático e divertido para ajudar a entender segurança online. Senhas fortes são como um super cadeado para suas contas, e esse projeto te mostra como está o seu. É perfeito para quem está aprendendo Python, quer explorar Flask ou bancos de dados, ou simplesmente quer senhas mais seguras. E, claro, é uma chance de se divertir brincando com código!
+- **Trabalhar com Flask**  
+  Aprendi a criar rotas, lidar com formulários e usar mensagens flash. Foi meu primeiro contato real com a estrutura de um app web completo.
+
+- **Banco de dados na prática**  
+  Foi minha primeira vez integrando **SQLite** com Flask. Aprendi a criar tabelas, inserir dados e realizar consultas para exibir resultados.
+
+- **Regex na validação**  
+  Tive alguns desafios com expressões regulares, principalmente para validar caracteres especiais, mas consegui dominar o básico para aplicar nas verificações.
+
+> Cada bug foi um desafio… e cada correção, uma pequena vitória!
 
 ## Ideias para se divertir com o projeto
 
