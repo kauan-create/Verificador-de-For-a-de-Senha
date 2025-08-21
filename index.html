@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Força de Senha</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { padding: 10px; width: 100%; }
+        input[type="submit"] { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background: #0056b3; }
+        .message { color: #d9534f; }
+        .history { margin-top: 20px; }
+        .history-item { padding: 10px; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Força de Senha</h1>
+    <p>Digite uma senha para verificar se ela é segura!</p>
+    <form method="POST">
+        <input type="text" name="password" placeholder="Digite sua senha" autocomplete="off">
+        <input type="submit" value="Verificar">
+    </form>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <h2>Últimas verificações</h2>
+    <div class="history">
+        {% for entry in history %}
+            <div class="history-item">
+                <strong>Senha {{ entry[0] }}</strong>: {{ entry[1] }}
+            </div>
+        {% else %}
+            <p>Nenhuma senha verificada ainda!</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
